@@ -7,4 +7,6 @@ inspect_role.py
 test_codecommit.py
 setup_aws_pipeline.py
 deploy_infra.py
+check_pipeline_execution.py
+commit_all_and_run_pipeline.py
 *.tmp
