@@ -1,0 +1,10 @@
+# Python & Scripts
+__pycache__/
+*.pyc
+aws_test.py
+check_permissions.py
+inspect_role.py
+test_codecommit.py
+setup_aws_pipeline.py
+deploy_infra.py
+*.tmp

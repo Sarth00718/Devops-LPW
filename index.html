@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devops-LPW | Cloud & CI/CD Pipeline Dashboard</title>
+  <meta name="description" content="Production-ready DevOps CI/CD pipeline automated with GitHub, AWS CodeCommit, AWS CodePipeline, and Amazon S3 Static Web Hosting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Background FX -->
+  <div class="bg-grid"></div>
+  <div class="bg-radial"></div>
+  <div class="bg-radial-bottom"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo" id="brand-logo">
+        <div class="logo-badge">⚡</div>
+        <span>Devops-LPW</span>
+      </a>
+      <div class="status-pill" id="live-status-pill">
+        <span class="status-dot"></span>
+        <span id="pipeline-status-text">Pipeline: Live & Active</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+      <span class="hero-tag">Automated Continuous Delivery</span>
+      <h1 class="hero-title">Continuous Integration & <span>S3 Cloud Hosting</span></h1>
+      <p class="hero-subtitle">
+        Seamlessly delivering modern web infrastructure. Every Git commit triggers an automated pipeline that mirrors code to AWS CodeCommit, validates via AWS CodePipeline, and synchronizes to an Amazon S3 static hosting bucket.
+      </p>
+      <div class="hero-actions">
+        <a href="#pipeline-section" class="btn btn-primary" id="btn-explore-pipeline">
+          <span>Explore Pipeline Flow</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://github.com/Sarth00718/Devops-LPW" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-github-repo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub Repository</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Metrics Summary -->
+    <div class="metrics-row" id="metrics-summary">
+      <div class="metric-card">
+        <div class="metric-val" id="metric-uptime">99.99%</div>
+        <div class="metric-label">S3 Uptime SLA</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" id="metric-latency">&lt; 35ms</div>
+        <div class="metric-label">Global TTFB</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" id="metric-deploy">Automated</div>
+        <div class="metric-label">Pipeline Trigger</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" id="metric-cost">$0.00</div>
+        <div class="metric-label">Serverless Footprint</div>
+      </div>
+    </div>
+
+    <!-- Interactive DevOps Pipeline Diagram -->
+    <section class="pipeline-section" id="pipeline-section">
+      <div class="section-header">
+        <h2 class="section-title">Automated DevOps Architecture</h2>
+        <p class="section-desc">Click on any pipeline stage to inspect the operational workflow</p>
+      </div>
+
+      <div class="pipeline-card">
+        <div class="pipeline-flow">
+          <!-- Step 1 -->
+          <div class="step-card active" id="stage-github" data-stage="github">
+            <div class="step-number">
+              <span>Stage 01</span>
+              <span class="step-badge">SOURCE</span>
+            </div>
+            <div class="step-icon">🐙</div>
+            <h3 class="step-title">GitHub Repository</h3>
+            <p class="step-meta">Developers push changes to <code>main</code> branch with automated Webhook integration.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card" id="stage-codecommit" data-stage="codecommit">
+            <div class="step-number">
+              <span>Stage 02</span>
+              <span class="step-badge">AWS REPO</span>
+            </div>
+            <div class="step-icon">📦</div>
+            <h3 class="step-title">AWS CodeCommit</h3>
+            <p class="step-meta">Enterprise private Git storage ensuring tight IAM policy compliance and replication.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card" id="stage-codepipeline" data-stage="codepipeline">
+            <div class="step-number">
+              <span>Stage 03</span>
+              <span class="step-badge">ORCHESTRATOR</span>
+            </div>
+            <div class="step-icon">🔄</div>
+            <h3 class="step-title">AWS CodePipeline</h3>
+            <p class="step-meta">Listens to repository changes, processes build artifacts, and triggers zero-downtime release.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card" id="stage-s3" data-stage="s3">
+            <div class="step-number">
+              <span>Stage 04</span>
+              <span class="step-badge">PRODUCTION</span>
+            </div>
+            <div class="step-icon">🪣</div>
+            <h3 class="step-title">Amazon S3 Live</h3>
+            <p class="step-meta">High-availability static website hosting with public bucket policy and fast CDN delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Terminal Simulator -->
+    <section class="terminal-wrapper" id="terminal-interactive">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="terminal-dot dot-red"></span>
+          <span class="terminal-dot dot-yellow"></span>
+          <span class="terminal-dot dot-green"></span>
+        </div>
+        <div class="terminal-title">pipeline-runner@aws-cloud-shell:~</div>
+        <div style="width: 50px;"></div>
+      </div>
+      <div class="terminal-body" id="terminal-content">
+        <div class="terminal-line">
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-text">git status</span>
+        </div>
+        <div class="terminal-output">On branch main, working tree clean. Remote origin: Devops-LPW.git</div>
+        <div class="terminal-line" style="margin-top: 10px;">
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-text">aws codepipeline get-pipeline-state --name Devops-LPW-Pipeline</span>
+        </div>
+        <div class="terminal-output terminal-success">✓ Stage: Source [GitHub / CodeCommit] — Succeeded</div>
+        <div class="terminal-output terminal-success">✓ Stage: Deploy [Amazon S3 Hosting] — Succeeded</div>
+        <div class="terminal-output" style="color: var(--accent-cyan); margin-top: 8px;">★ Status: Static Website is LIVE on Amazon S3!</div>
+      </div>
+    </section>
+
+    <!-- Key Architecture Features -->
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">Instant Deployments</h3>
+        <p class="feature-desc">Zero manual file transfers. Code commit triggers automated ingestion and deployment directly into S3 within seconds.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">🛡️</div>
+        <h3 class="feature-title">IAM Role-Based Security</h3>
+        <p class="feature-desc">Least-privilege AWS IAM policies govern CodePipeline permissions without exposing permanent root credentials.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">🌐</div>
+        <h3 class="feature-title">High Reliability</h3>
+        <p class="feature-desc">Backed by 99.999999999% (11 9's) Amazon S3 durability with global internet-scale distribution.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Devops-LPW CI/CD Pipeline &bull; Automated with AWS CloudServices &bull; Sarth00718</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
